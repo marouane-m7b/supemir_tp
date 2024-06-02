@@ -28,7 +28,8 @@ router.post("/submit", (req, res) => {
     return res.status(400).send("Genre invalide, veuillez renseigner un genre");
   }
 
-  if(age > 10 || age < 20) {
+
+  if(age > 18 || age < 10) {
     return res.status(400).send("Age invalide, veuillez renseigner un age positif");
   }
 
