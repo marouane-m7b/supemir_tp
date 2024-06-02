@@ -16,23 +16,23 @@ router.post("/submit", (req, res) => {
   const age = parseInt(req.body.age);
   const gender = req.body.gender;
 
-  if(!name) {
+  if(!name || name.trim().length === 0) {
     return res.status(400).send("Nom invalide, veuillez renseigner un nom");
   }
 
-  if(!age) {  
+  if(!age || age < 0) {  
     return res.status(400).send("Age invalide, veuillez renseigner un age");
   }
 
-  if(!gender) {
+  if(!gender || gender.trim().length === 0) {
     return res.status(400).send("Genre invalide, veuillez renseigner un genre");
   }
 
-  if(age > 15 || age < 12) {
+  if(age > 10 || age < 20) {
     return res.status(400).send("Age invalide, veuillez renseigner un age positif");
   }
 
-  if(gender.includes("homme") || gender.includes("femme")) {
+  if(gender.includes("homme") && gender.includes("femme")) {
     return res.status(400).send("Genre invalide, veuillez renseigner un genre valide");
   }
 
