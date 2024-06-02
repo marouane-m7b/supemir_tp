@@ -28,11 +28,11 @@ router.post("/submit", (req, res) => {
     return res.status(400).send("Genre invalide, veuillez renseigner un genre");
   }
 
-  if(age > 15 || age < 12) {
+  if(age > 18 || age < 10) {
     return res.status(400).send("Age invalide, veuillez renseigner un age positif");
   }
 
-  if(gender.includes("homme") || gender.includes("femme")) {
+  if(gender.includes("homme") && gender.includes("femme")) {
     return res.status(400).send("Genre invalide, veuillez renseigner un genre valide");
   }
 
