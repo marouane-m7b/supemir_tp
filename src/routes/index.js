@@ -17,7 +17,15 @@ router.post("/submit", (req, res) => {
   const gender = req.body.gender;
 
   if(!name) {
-    return res.status(400).send("Nom invalide, veuillez renseigner tous les champs");
+    return res.status(400).send("Nom invalide, veuillez renseigner un nom");
+  }
+
+  if(!age) {  
+    return res.status(400).send("Age invalide, veuillez renseigner un age");
+  }
+
+  if(!gender) {
+    return res.status(400).send("Genre invalide, veuillez renseigner un genre");
   }
 
   if(age >= 15 || age <= 12) {
