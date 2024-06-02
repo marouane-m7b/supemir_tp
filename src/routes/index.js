@@ -13,11 +13,11 @@ router.post("/submit", (req, res) => {
   const age = parseInt(req.body.age);
   const gender = req.body.gender;
 
-  if(!name || !age || !gender) {
+  if(!name) {
     return res.status(400).send("Nom invalide, veuillez renseigner tous les champs");
   }
 
-  if(age > 15 || age < 12) {
+  if(age >= 15 || age <= 12) {
     return res.status(400).send("Age invalide, veuillez renseigner un age positif");
   }
 
