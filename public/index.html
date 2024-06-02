@@ -3,11 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulaire Étudiant</title>
+    <title>Exercice</title>
 </head>
 <body>
-    <h1>Formulaire Étudiant</h1>
-    <!-- Start Formulaire -->
-    <!-- End Formulaire -->
+    <h2>Formulaire Etudiant</h2>
+    <form action="/submit" method="POST">
+    <label for="nomEtPrenom">Nom et prenom :</label>
+    <input type="text" name="nomEtPrenom" id="nomEtPrenom" placeholder="Votre Nom & prenom"> <br><br>
+    <label for="age">Age :</label>
+    <input type="number" name="age" id="age" placeholder="Votre age"><br><br>
+    <label>Genre:</label> <br>
+    <input type="checkbox" name="homme" id="homme" value="Homme" > <label for="homme">Homme</label> <br> 
+    <input type="checkbox" name="femme" id="femme" value="Femme"> <label for="femme">Femme</label><br><br><br>
+    <button style="cursor: pointer;" type="submit">Enregistrer</button>
+</form>
 </body>
 </html>
